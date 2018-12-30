@@ -10,7 +10,12 @@ export class TeamLeaderPage extends Component {
         ],
 
         employees: [
+            //here i can set empty array to which data from sql comes
             "bobby", "tim", "carla"
+        ],
+
+        quotations: [
+            "Everything is good!"
         ]
 
     }
@@ -26,7 +31,7 @@ export class TeamLeaderPage extends Component {
                 </td>
                 
                 <td>
-                    //Here will be nice quotes from database
+                        {this.state.quotations.map(quotation => <div>{quotation}</div>)}
                 </td>
 
                 <td>
@@ -36,9 +41,9 @@ export class TeamLeaderPage extends Component {
 
                 <table>
                     <th>Open tasks</th>
-                    {this.state.employees.map(employee => <th>{employee}</th>)};
+                    {this.state.employees.map(employee => <th>{employee}</th>)}
                     <tr>
-                        {this.state.tasks.map(task => <div>{task}</div>)};
+                        {this.state.tasks.map(task => <div>{task}</div>)}
                     </tr>    
                     
 

@@ -11,6 +11,10 @@ export class Employees extends Component {
 
         employees: [
             "bobby", "tim", "carla"
+        ],
+
+        quotations: [
+            "Everything will be good!"
         ]
 
     }
@@ -26,7 +30,7 @@ export class Employees extends Component {
                     </td>
 
                     <td>
-                    //Here will be nice quotes from database
+                        {this.state.quotations.map(quotation => <div>{quotation}</div>)}
                     </td>
 
                     <td>
@@ -36,9 +40,9 @@ export class Employees extends Component {
 
                 <table>
                     <th>Open tasks</th>
-                    {this.state.employees.map(employee => <th>{employee}</th>)};
+                    {this.state.employees.map(employee => <th>{employee}</th>)}
                     <tr>
-                        {this.state.tasks.map(task => <div>{task}</div>)};
+                        {this.state.tasks.map(task => <div>{task}</div>)}
                     </tr>
 
 

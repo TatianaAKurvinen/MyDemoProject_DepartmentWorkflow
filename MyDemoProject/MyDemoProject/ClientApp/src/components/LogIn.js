@@ -11,13 +11,13 @@ export class LogIn extends Component {
             <div>
                 <h2> Please, enter your E-mail and password to log in</h2>
                 <div>
-                    <label>Email address</label>
-                    <input type="email" className="form-control" placeholder="Enter email" />
+                    <label>Name</label>
+                    <input type="text" className="form-control" placeholder="Enter name" />
                  </div> 
 
                  <div>
-                        <label>Password</label>
-                        <input type="password" className="form-control" placeholder="Password" />
+                        <label>Department</label>
+                        <input type="text" className="form-control" placeholder="Enter department" />
                  </div>
 
                 <LinkContainer to={'/TeamLeader'}>
