@@ -1,21 +1,20 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router';
-import { Layout } from './components/Layout';
-import { Home } from './components/Home';
-import { FetchData } from './components/FetchData';
-import { Counter } from './components/Counter';
+import { LogIn } from './components/LogIn';
+import { TeamLeaderPage } from './components/TeamLeaderPage';
+import { Employees } from './components/Employees';
+
 
 export default class App extends Component {
-  displayName = App.name
+    displayName = App.name;
 
   render() {
-    return (
-        <Layout>
-            <h1>Smth doesn't work?</h1>
-        <Route exact path='/' component={Home} />
-        <Route path='/counter' component={Counter} />
-        <Route path='/fetchdata' component={FetchData} />
-      </Layout>
+      return (
+          <div>
+              <Route exact path='/' component={LogIn} />
+              <Route path='/TeamLeader' component={TeamLeaderPage} />
+              <Route path='/Employees' component={Employees} />
+          </div>
     );
   }
 }
