@@ -17,7 +17,7 @@ namespace MyDemoProject.Models
 
         public virtual DbSet<EmployeeData> EmployeeData { get; set; }
         public virtual DbSet<MotivationPhrase> MotivationPhrase { get; set; }
-        public virtual DbSet<TasksData> TasksData { get; set; }
+        public virtual DbSet<TaskData> TaskData { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -62,12 +62,12 @@ namespace MyDemoProject.Models
                     .ValueGeneratedNever();
             });
 
-            modelBuilder.Entity<TasksData>(entity =>
+            modelBuilder.Entity<TaskData>(entity =>
             {
                 entity.HasKey(e => e.TaskTitle);
 
                 entity.Property(e => e.TaskTitle)
-                    .HasMaxLength(10)
+                    .HasMaxLength(50)
                     .ValueGeneratedNever();
 
                 entity.Property(e => e.Dl)
@@ -76,15 +76,14 @@ namespace MyDemoProject.Models
 
                 entity.Property(e => e.EmployeeName).HasMaxLength(50);
 
-                entity.Property(e => e.TitleId)
-                    .IsRequired()
-                    .HasMaxLength(10);
+                entity.Property(e => e.Status).HasMaxLength(10);
 
-                entity.HasOne(d => d.TaskTitleNavigation)
-                    .WithOne(p => p.InverseTaskTitleNavigation)
-                    .HasForeignKey<TasksData>(d => d.TaskTitle)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_TasksData_EmployeeData");
+                entity.Property(e => e.TaskDescription).HasMaxLength(50);
+
+                entity.HasOne(d => d.EmployeeNameNavigation)
+                    .WithMany(p => p.TaskData)
+                    .HasForeignKey(d => d.EmployeeName)
+                    .HasConstraintName("FK_TaskData_EmployeeData");
             });
         }
     }
