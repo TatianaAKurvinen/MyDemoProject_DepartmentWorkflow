@@ -12,6 +12,11 @@ namespace MyDemoProject.Controllers
     [ApiController]
     public class MotivationController : ControllerBase
     {
-       
+        public List<MotivationPhrase> GetAll()
+        {
+            MyDemoProjectContext context = new MyDemoProjectContext();
+            List<MotivationPhrase> phrase = context.MotivationPhrase.ToList();
+            return phrase;
+        }
     }
 }
