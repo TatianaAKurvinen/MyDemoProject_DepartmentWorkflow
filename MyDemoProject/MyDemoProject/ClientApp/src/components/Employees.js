@@ -13,10 +13,7 @@ export class Employees extends Component {
             phraseList: [],
             taskList: [],
             phraseSelection: []
-            
         }
-
-        
     }
 
     componentWillMount() {
@@ -28,21 +25,17 @@ export class Employees extends Component {
                     phraseList: phrase
                 });
                 console.log('motivation fetch');
-            }
-
-            );
+            });
 
         fetch('https://localhost:44340/api/employee')
             .then(response => response.json())
             .then((employee) => {
                 this.setState({
                     employeeList: employee
-                
+
                 });
                 console.log('employee fetch');
-            }
-
-            );
+            });
 
         fetch('https://localhost:44340/api/task')
             .then(response => response.json())
@@ -51,191 +44,152 @@ export class Employees extends Component {
                     taskList: task
                 });
                 console.log('task fetch');
-            }
-
-            );
-
-        
-
+            });
     }
 
-        renderEmployees() {
+    renderEmployees() {
 
         let employees = [];
 
-            for (let i = 0; i < this.state.employeeList.length; i++) {
-                employees.push(<th> {this.state.employeeList[i].employeeName} </th>) 
-                }
-            return employees;
-
-
+        for (let i = 0; i < this.state.employeeList.length; i++) {
+            employees.push(<th> {this.state.employeeList[i].employeeName} </th>)
+        }
+        return employees;
     }
 
     renderOpenTasks() {
 
         let openTasks = [];
+
         for (let i = 0; i < this.state.taskList.length; i++) {
-                if (this.state.taskList[i].employeeName==null) {
-                    openTasks.push(<tr>{this.state.taskList[i].taskTitle}</tr>)
-                }
-            
+            if (this.state.taskList[i].employeeName == null) {
+                openTasks.push(<tr>{this.state.taskList[i].taskTitle}</tr>)
+            }
         }
         return openTasks;
     }
 
     renderTasks0() {
+
         let tasks = [];
-        
-        
-        for (let i = 0; i < this.state.taskList.length; i++) { 
-                if (this.state.employeeList[0].employeeName === this.state.taskList[i].employeeName) {
-                    tasks.push(<tr>{this.state.taskList[i].taskTitle}</tr>);
-                }
-                
-                }
-                
-        
+
+        for (let i = 0; i < this.state.taskList.length; i++) {
+            if (this.state.employeeList[0].employeeName === this.state.taskList[i].employeeName) {
+                tasks.push(<tr>{this.state.taskList[i].taskTitle}</tr>);
+            }
+        }
         return tasks;
-            
     }
 
     renderTasks1() {
-        let tasks = [];
 
+        let tasks = [];
 
         for (let i = 0; i < this.state.taskList.length; i++) {
             if (this.state.employeeList[1].employeeName === this.state.taskList[i].employeeName) {
                 tasks.push(<tr>{this.state.taskList[i].taskTitle}</tr>);
             }
-
         }
-
-
         return tasks;
-
     }
 
     renderTasks2() {
-        let tasks = [];
 
+        let tasks = [];
 
         for (let i = 0; i < this.state.taskList.length; i++) {
             if (this.state.employeeList[2].employeeName === this.state.taskList[i].employeeName) {
                 tasks.push(<tr>{this.state.taskList[i].taskTitle}</tr>);
             }
-
         }
-
-
         return tasks;
-
     }
-        renderTasks3() {
-        let tasks = [];
 
+    renderTasks3() {
+
+        let tasks = [];
 
         for (let i = 0; i < this.state.taskList.length; i++) {
             if (this.state.employeeList[3].employeeName === this.state.taskList[i].employeeName) {
                 tasks.push(<tr>{this.state.taskList[i].taskTitle}</tr>);
             }
-
         }
-
-
         return tasks;
-
     }
-        renderTasks4() {
-        let tasks = [];
 
+    renderTasks4() {
+
+        let tasks = [];
 
         for (let i = 0; i < this.state.taskList.length; i++) {
             if (this.state.employeeList[4].employeeName === this.state.taskList[i].employeeName) {
                 tasks.push(<tr>{this.state.taskList[i].taskTitle}</tr>);
             }
-
         }
-
-
         return tasks;
-
     }
-        renderTasks5() {
-        let tasks = [];
 
+    renderTasks5() {
+
+        let tasks = [];
 
         for (let i = 0; i < this.state.taskList.length; i++) {
             if (this.state.employeeList[5].employeeName === this.state.taskList[i].employeeName) {
                 tasks.push(<tr>{this.state.taskList[i].taskTitle}</tr>);
             }
-
         }
-
-
         return tasks;
-
     }
-        renderTasks6() {
-        let tasks = [];
 
+    renderTasks6() {
+
+        let tasks = [];
 
         for (let i = 0; i < this.state.taskList.length; i++) {
             if (this.state.employeeList[6].employeeName === this.state.taskList[i].employeeName) {
                 tasks.push(<tr>{this.state.taskList[i].taskTitle}</tr>);
             }
-
         }
-
-
         return tasks;
-
     }
-        renderTasks7() {
-        let tasks = [];
 
+    renderTasks7() {
+
+        let tasks = [];
 
         for (let i = 0; i < this.state.taskList.length; i++) {
             if (this.state.employeeList[7].employeeName === this.state.taskList[i].employeeName) {
                 tasks.push(<tr>{this.state.taskList[i].taskTitle}</tr>);
             }
-
         }
-
-
         return tasks;
-
     }
-        renderTasks8() {
-        let tasks = [];
 
+    renderTasks8() {
+
+        let tasks = [];
 
         for (let i = 0; i < this.state.taskList.length; i++) {
             if (this.state.employeeList[8].employeeName === this.state.taskList[i].employeeName) {
                 tasks.push(<tr>{this.state.taskList[i].taskTitle}</tr>);
             }
-
         }
-
-
         return tasks;
-
     }
-        renderTasks9() {
-        let tasks = [];
 
+    renderTasks9() {
+
+        let tasks = [];
 
         for (let i = 0; i < this.state.taskList.length; i++) {
             if (this.state.employeeList[9].employeeName === this.state.taskList[i].employeeName) {
                 tasks.push(<tr>{this.state.taskList[i].taskTitle}</tr>);
             }
-
         }
-
-
         return tasks;
-
     }
-        
+
+  
 
     render() {
 
@@ -250,10 +204,12 @@ export class Employees extends Component {
                 <table>
                     <tbody>
                         <td>
-                            <button className="btn btn-secondary btn-sm">Add new task</button>
+                            
                         </td>
 
-                        test
+                        <td>
+                            Onni ei tule valmiina, vaan omista teoista.
+                        </td>
 
                         <td>
                         //Here will be time and date
