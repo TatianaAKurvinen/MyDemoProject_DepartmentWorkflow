@@ -20,8 +20,22 @@ namespace MyDemoProject
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            //Add service and create policy with options
 
+            {
+                // Add service and create Policy with options
+                services.AddCors(options =>
+                {
+                    options.AddPolicy("MyCorsPolicy",
+                        builder => builder.AllowAnyOrigin()
+                        .AllowAnyMethod()
+                        .AllowAnyHeader()
+                        .AllowCredentials());
+                });
+
+                services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+
+            }
             // In production, the React files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
             {
@@ -32,6 +46,9 @@ namespace MyDemoProject
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+            // global policy - assign here or on each controller
+            app.UseCors("MyCorsPolicy");
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
