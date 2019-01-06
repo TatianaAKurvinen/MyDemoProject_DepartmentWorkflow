@@ -41,7 +41,7 @@ export class LogIn extends Component {
             }
            
         }
-        alert("wrong");
+        
     }
 
     render() {

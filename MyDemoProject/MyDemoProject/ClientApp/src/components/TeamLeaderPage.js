@@ -66,7 +66,9 @@ export class TeamLeaderPage extends Component {
         {
             if (this.state.taskList[i].employeeName == null)
             {
-                openTasks.push(<tr>{this.state.taskList[i].taskTitle}</tr>)
+                openTasks.push(<tr>{this.state.taskList[i].taskTitle}<div>
+                    <input type="text" name="setEmployee" placeholder="Assign employee to task"/></div>
+                </tr>)
             }
         }
         return openTasks;

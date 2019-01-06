@@ -75,7 +75,8 @@ export class Employees extends Component {
 
         for (let i = 0; i < this.state.taskList.length; i++) {
             if (this.state.employeeList[0].employeeName === this.state.taskList[i].employeeName) {
-                tasks.push(<tr>{this.state.taskList[i].taskTitle}</tr>);
+                tasks.push(<tr>{this.state.taskList[i].taskTitle} <div><input type="checkbox"/ >
+                    <label>Task is done</label></div></tr>);
             }
         }
         return tasks;
@@ -87,7 +88,8 @@ export class Employees extends Component {
 
         for (let i = 0; i < this.state.taskList.length; i++) {
             if (this.state.employeeList[1].employeeName === this.state.taskList[i].employeeName) {
-                tasks.push(<tr>{this.state.taskList[i].taskTitle}</tr>);
+                tasks.push(<tr>{this.state.taskList[i].taskTitle} <div><input type="checkbox" />
+                    <label>Task is done</label></div></tr>);
             }
         }
         return tasks;
@@ -99,7 +101,8 @@ export class Employees extends Component {
 
         for (let i = 0; i < this.state.taskList.length; i++) {
             if (this.state.employeeList[2].employeeName === this.state.taskList[i].employeeName) {
-                tasks.push(<tr>{this.state.taskList[i].taskTitle}</tr>);
+                tasks.push(<tr>{this.state.taskList[i].taskTitle} <div><input type="checkbox" />
+                    <label>Task is done</label></div></tr>);
             }
         }
         return tasks;
@@ -111,7 +114,8 @@ export class Employees extends Component {
 
         for (let i = 0; i < this.state.taskList.length; i++) {
             if (this.state.employeeList[3].employeeName === this.state.taskList[i].employeeName) {
-                tasks.push(<tr>{this.state.taskList[i].taskTitle}</tr>);
+                tasks.push(<tr>{this.state.taskList[i].taskTitle} <div><input type="checkbox" />
+                    <label>Task is done</label></div></tr>);
             }
         }
         return tasks;
@@ -123,7 +127,8 @@ export class Employees extends Component {
 
         for (let i = 0; i < this.state.taskList.length; i++) {
             if (this.state.employeeList[4].employeeName === this.state.taskList[i].employeeName) {
-                tasks.push(<tr>{this.state.taskList[i].taskTitle}</tr>);
+                tasks.push(<tr>{this.state.taskList[i].taskTitle} <div><input type="checkbox" />
+                    <label>Task is done</label></div></tr>);
             }
         }
         return tasks;
@@ -135,7 +140,8 @@ export class Employees extends Component {
 
         for (let i = 0; i < this.state.taskList.length; i++) {
             if (this.state.employeeList[5].employeeName === this.state.taskList[i].employeeName) {
-                tasks.push(<tr>{this.state.taskList[i].taskTitle}</tr>);
+                tasks.push(<tr>{this.state.taskList[i].taskTitle} <div><input type="checkbox" />
+                    <label>Task is done</label></div></tr>);
             }
         }
         return tasks;
@@ -147,7 +153,8 @@ export class Employees extends Component {
 
         for (let i = 0; i < this.state.taskList.length; i++) {
             if (this.state.employeeList[6].employeeName === this.state.taskList[i].employeeName) {
-                tasks.push(<tr>{this.state.taskList[i].taskTitle}</tr>);
+                tasks.push(<tr>{this.state.taskList[i].taskTitle} <div><input type="checkbox" />
+                    <label>Task is done</label></div></tr>);
             }
         }
         return tasks;
@@ -159,7 +166,8 @@ export class Employees extends Component {
 
         for (let i = 0; i < this.state.taskList.length; i++) {
             if (this.state.employeeList[7].employeeName === this.state.taskList[i].employeeName) {
-                tasks.push(<tr>{this.state.taskList[i].taskTitle}</tr>);
+                tasks.push(<tr>{this.state.taskList[i].taskTitle} <div><input type="checkbox" />
+                    <label>Task is done</label></div></tr>);
             }
         }
         return tasks;
@@ -171,7 +179,8 @@ export class Employees extends Component {
 
         for (let i = 0; i < this.state.taskList.length; i++) {
             if (this.state.employeeList[8].employeeName === this.state.taskList[i].employeeName) {
-                tasks.push(<tr>{this.state.taskList[i].taskTitle}</tr>);
+                tasks.push(<tr>{this.state.taskList[i].taskTitle} <div><input type="checkbox" />
+                    <label>Task is done</label></div></tr>);
             }
         }
         return tasks;
@@ -183,14 +192,14 @@ export class Employees extends Component {
 
         for (let i = 0; i < this.state.taskList.length; i++) {
             if (this.state.employeeList[9].employeeName === this.state.taskList[i].employeeName) {
-                tasks.push(<tr>{this.state.taskList[i].taskTitle}</tr>);
+                tasks.push(<tr>{this.state.taskList[i].taskTitle} <div><input type="checkbox" />
+                    <label>Task is done</label></div></tr>);
             }
         }
         return tasks;
     }
 
-  
-
+    
     render() {
 
         console.log(this.state.taskList)
