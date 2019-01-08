@@ -16,7 +16,7 @@ export default class HeaderEmployee extends Component {
                         </p>    
                         </td>
 
-                    <td id="root" id="time">
+                    <td id="time">
                         <DateTime />
                     </td>
                 </tbody>

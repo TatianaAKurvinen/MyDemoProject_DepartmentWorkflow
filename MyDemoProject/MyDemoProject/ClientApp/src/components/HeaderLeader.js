@@ -19,7 +19,7 @@ export default class HeaderLeader extends Component {
                     </p>        
              </td>
 
-                <td id="root" id="time" className="LeaderHeader">
+                <td  id="time" className="LeaderHeader">
                 <DateTime />
             </td>
                 </tbody >

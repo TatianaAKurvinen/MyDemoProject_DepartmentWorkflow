@@ -174,7 +174,6 @@ export class TeamLeaderPage extends Component {
 
         fetch('https://localhost:44340/api/task', {
             method: 'PUT',
-            mode: "no-cors",
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
