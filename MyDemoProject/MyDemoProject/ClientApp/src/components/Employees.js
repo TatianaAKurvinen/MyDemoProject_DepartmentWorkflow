@@ -58,20 +58,18 @@ export class Employees extends Component {
         renderTasks0() {
 
             let tasks = [];
-
+           
             for (let i = 0; i < this.state.taskList.length; i++) {
                 if (this.state.employeeList[0].employeeName === this.state.taskList[i].employeeName) {
                     tasks.push(<tr><div className="EmployeeTaskCheckBox"> {this.state.taskList[i].taskTitle} <div><input type="checkbox" name={this.state.taskList[i].taskTitle} />
                         <label>Done</label></div></div></tr>);
 
                       //  onClick={this.setState({ ...this.state, doneTask: this.name })}
-
-                    
-                        
                 }
             }
             return tasks;
-        }
+            }
+        
 
         renderTasks1() {
 
