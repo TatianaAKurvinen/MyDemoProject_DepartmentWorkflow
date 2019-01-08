@@ -1,6 +1,7 @@
 ﻿import React, { Component } from "react";
 import HeaderLeader from "./HeaderLeader";
 import './TeamLeaderPage.css';
+import DoneTasks from "./DoneTasks";
 
 export class TeamLeaderPage extends Component {
     displayName = TeamLeaderPage.name;
@@ -13,23 +14,13 @@ export class TeamLeaderPage extends Component {
             phraseList: [],
             taskList: [],
             phraseSelection: [],
-            newTask: '',
-            assignedEmployee: '',
             openTaskAss: '',
-            newEmployeeAss: ''
+            newEmployeeAss: '',
+            
         }
     }
 
     componentWillMount() {
-
-        fetch('https://localhost:44340/api/motivation')
-            .then(response => response.json())
-            .then((phrase) => {
-                this.setState({
-                    phraseList: phrase
-                });
-                console.log('motivation fetch');
-            } );
 
         fetch('https://localhost:44340/api/employee')
             .then(response => response.json())
@@ -71,9 +62,9 @@ export class TeamLeaderPage extends Component {
             if (this.state.taskList[i].employeeName == null)
             {
                 openTasks.push(<tr><div className="OpenTasks">{this.state.taskList[i].taskTitle}
-                    <div ><input type="text" id="AssignEmployee" name={this.state.taskList[i].taskTitle} placeholder="Assign employee" onChange={e => this.setState({ ...this.state, newEmployeeAss: e.target.value, openTaskAss:this.name })} />
-                    <button id="AssignEmployeeButton"
-                            onClick={this.UpdateDataToServer} className="btn btn-secondary btn-sm">OK</button></div></div>
+                    <div><input type="text" id="AssignEmployee" key={this.state.taskList[i].taskTitle} placeholder="Assign employee" onChange={e => this.setState({ ...this.state, newEmployeeAss: e.target.value })} />
+                        <button id="AssignEmployeeButton"
+                            onChange={e => this.setState({ ...this.state, openTaskAss: e.target.value }) } onClick={this.UpdateDataToServer} className="btn btn-secondary btn-sm">OK</button></div></div>
                 </tr>)
             }
         }
@@ -86,9 +77,10 @@ export class TeamLeaderPage extends Component {
 
         for (let i = 0; i < this.state.taskList.length; i++)
         {
-            if (this.state.employeeList[0].employeeName === this.state.taskList[i].employeeName)
-            {
-                tasks.push(<tr><div className="EmployeeTask"> {this.state.taskList[i].taskTitle}</div></tr>);
+            if (this.state.taskList[i].status !== "done      ") {
+                if (this.state.employeeList[0].employeeName === this.state.taskList[i].employeeName) {
+                    tasks.push(<tr><div className="EmployeeTask"> {this.state.taskList[i].taskTitle}</div></tr>);
+                }
             }
         }
         return tasks;
@@ -100,9 +92,10 @@ export class TeamLeaderPage extends Component {
 
         for (let i = 0; i < this.state.taskList.length; i++)
         {
-            if (this.state.employeeList[1].employeeName === this.state.taskList[i].employeeName)
-            {
-                tasks.push(<tr><div className="EmployeeTask"> {this.state.taskList[i].taskTitle}</div></tr>);
+            if (this.state.taskList[i].status !== "done      ") {
+                if (this.state.employeeList[1].employeeName === this.state.taskList[i].employeeName) {
+                    tasks.push(<tr><div className="EmployeeTask"> {this.state.taskList[i].taskTitle}</div></tr>);
+                }
             }
         }
         return tasks;
@@ -114,9 +107,10 @@ export class TeamLeaderPage extends Component {
 
         for (let i = 0; i < this.state.taskList.length; i++)
         {
-            if (this.state.employeeList[2].employeeName === this.state.taskList[i].employeeName)
-            {
-                tasks.push(<tr><div className="EmployeeTask"> {this.state.taskList[i].taskTitle}</div></tr>);
+            if (this.state.taskList[i].status !== "done      ") {
+                if (this.state.employeeList[2].employeeName === this.state.taskList[i].employeeName) {
+                    tasks.push(<tr><div className="EmployeeTask"> {this.state.taskList[i].taskTitle}</div></tr>);
+                }
             }
         }
         return tasks;
@@ -128,9 +122,11 @@ export class TeamLeaderPage extends Component {
 
         for (let i = 0; i < this.state.taskList.length; i++)
         {
-            if (this.state.employeeList[3].employeeName === this.state.taskList[i].employeeName)
-            {
-                tasks.push(<tr><div className="EmployeeTask"> {this.state.taskList[i].taskTitle}</div></tr>);
+            if (this.state.taskList[i].status !== "done      ") {
+
+                if (this.state.employeeList[3].employeeName === this.state.taskList[i].employeeName) {
+                    tasks.push(<tr><div className="EmployeeTask"> {this.state.taskList[i].taskTitle}</div></tr>);
+                }
             }
         }
         return tasks;
@@ -142,9 +138,11 @@ export class TeamLeaderPage extends Component {
 
         for (let i = 0; i < this.state.taskList.length; i++)
         {
-            if (this.state.employeeList[4].employeeName === this.state.taskList[i].employeeName)
-            {
-                tasks.push(<tr><div className="EmployeeTask"> {this.state.taskList[i].taskTitle}</div></tr>);
+            if (this.state.taskList[i].status !== "done      ") {
+
+                if (this.state.employeeList[4].employeeName === this.state.taskList[i].employeeName) {
+                    tasks.push(<tr><div className="EmployeeTask"> {this.state.taskList[i].taskTitle}</div></tr>);
+                }
             }
         }
         return tasks;
@@ -156,9 +154,11 @@ export class TeamLeaderPage extends Component {
 
         for (let i = 0; i < this.state.taskList.length; i++)
         {
-            if (this.state.employeeList[5].employeeName === this.state.taskList[i].employeeName)
-            {
-                tasks.push(<tr><div className="EmployeeTask"> {this.state.taskList[i].taskTitle}</div></tr>);
+            if (this.state.taskList[i].status !== "done      ") {
+
+                if (this.state.employeeList[5].employeeName === this.state.taskList[i].employeeName) {
+                    tasks.push(<tr><div className="EmployeeTask"> {this.state.taskList[i].taskTitle}</div></tr>);
+                }
             }
         }
         return tasks;
@@ -195,11 +195,7 @@ export class TeamLeaderPage extends Component {
     
     render() {
 
-        
-
         return (
-
-
 
             <div>
 
@@ -246,6 +242,8 @@ export class TeamLeaderPage extends Component {
 
                     </tbody>
                 </table>
+
+                <DoneTasks />
             </div>
         );
     }

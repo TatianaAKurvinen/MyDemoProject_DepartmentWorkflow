@@ -31,6 +31,30 @@ namespace MyDemoProject.Controllers
             return task.EmployeeName;
         }
 
+        [HttpPut]
+        [Route("{key}")]
+        public string PutEdit(string key, [FromBody] TaskData newData)
+        {
+            MyDemoProjectContext context = new MyDemoProjectContext();
+            TaskData opentask = context.TaskData.Find(key);
+
+            if (opentask != null)
+            {
+
+                opentask.TaskTitle = newData.TaskTitle;
+                opentask.EmployeeName = newData.EmployeeName;
+                opentask.Status = newData.Status;
+                
+
+                context.SaveChanges();
+                return "OK";
+            }
+
+            return "Not Found";
+
+        }
+
+
         [HttpDelete]
         [Route("{key}")]
         public string DeleteSingle(string key)

@@ -19,7 +19,12 @@
 h2{
     color: gray;
 }
-#LogInInput {
+#LogInInput1 {
+    margin: 25px 0px 25px 0px;
+    text-align: center;
+}
+
+#LogInInput2 {
     margin: 25px 0px 25px 0px;
     text-align: center;
 }

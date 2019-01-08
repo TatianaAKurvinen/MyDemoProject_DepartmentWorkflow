@@ -16,14 +16,11 @@ export class Employees extends Component {
             employeeList: [],
             taskList: [],
             doneTask: []
-            
-
         }
     }
        
     componentWillMount() {
-
-        
+    
 
         fetch('https://localhost:44340/api/employee')
             .then(response => response.json())
@@ -60,25 +57,30 @@ export class Employees extends Component {
             let tasks = [];
            
             for (let i = 0; i < this.state.taskList.length; i++) {
+                if (this.state.taskList[i].status !== "done      ") {
                 if (this.state.employeeList[0].employeeName === this.state.taskList[i].employeeName) {
-                    tasks.push(<tr><div className="EmployeeTaskCheckBox"> {this.state.taskList[i].taskTitle} <div><input type="checkbox" name={this.state.taskList[i].taskTitle} />
-                        <label>Done</label></div></div></tr>);
+                    tasks.push(<tr><div className="EmployeeTaskCheckBox"> {this.state.taskList[i].taskTitle} <div><button id="DoneTaskButton" className="btn btn-secondary btn-sm" name={this.state.taskList[i].taskTitle} onClick={this.UpdateDataToServer}>Task is done</button>
+                        </div></div></tr>);
 
                       //  onClick={this.setState({ ...this.state, doneTask: this.name })}
+
+                    }
                 }
             }
             return tasks;
             }
         
-
         renderTasks1() {
 
             let tasks = [];
 
             for (let i = 0; i < this.state.taskList.length; i++) {
-                if (this.state.employeeList[1].employeeName === this.state.taskList[i].employeeName) {
-                    tasks.push(<tr><div className="EmployeeTaskCheckBox"> {this.state.taskList[i].taskTitle} <div><input type="checkbox" name={this.state.taskList[i].taskTitle} />
-                        <label>Done</label></div></div></tr>);
+             
+                if (this.state.taskList[i].status !== "done      ") {
+                    if (this.state.employeeList[1].employeeName === this.state.taskList[i].employeeName) {
+                        tasks.push(<tr><div className="EmployeeTaskCheckBox"> {this.state.taskList[i].taskTitle} <div><button id="DoneTaskButton" className="btn btn-secondary btn-sm" name={this.state.taskList[i].taskTitle} onClick={this.UpdateDataToServer}>Task is done</button>
+                        </div></div></tr>);
+                    }
                 }
             }
             return tasks;
@@ -89,9 +91,12 @@ export class Employees extends Component {
             let tasks = [];
 
             for (let i = 0; i < this.state.taskList.length; i++) {
-                if (this.state.employeeList[2].employeeName === this.state.taskList[i].employeeName) {
-                    tasks.push(<tr><div className="EmployeeTaskCheckBox"> {this.state.taskList[i].taskTitle} <div><input type="checkbox" name={this.state.taskList[i].taskTitle} />
-                        <label>Done</label></div></div></tr>);
+                if (this.state.taskList[i].status !== "done      ") {
+                    if (this.state.employeeList[2].employeeName === this.state.taskList[i].employeeName) {
+                        tasks.push(<tr><div className="EmployeeTaskCheckBox"> {this.state.taskList[i].taskTitle} <div><button id="DoneTaskButton" className="btn btn-secondary btn-sm" name={this.state.taskList[i].taskTitle} onClick={this.UpdateDataToServer}>Task is done</button>
+                        </div></div></tr>);
+                    }
+
                 }
             }
             return tasks;
@@ -102,12 +107,16 @@ export class Employees extends Component {
             let tasks = [];
 
             for (let i = 0; i < this.state.taskList.length; i++) {
-                if (this.state.employeeList[3].employeeName === this.state.taskList[i].employeeName) {
-                    tasks.push(<tr><div className="EmployeeTaskCheckBox"> {this.state.taskList[i].taskTitle} <div><input type="checkbox" name={this.state.taskList[i].taskTitle} />
-                        <label>Done</label></div></div></tr>);
+                if (this.state.taskList[i].status !== "done      ") {
+                    if (this.state.employeeList[3].employeeName === this.state.taskList[i].employeeName) {
+                        tasks.push(<tr><div className="EmployeeTaskCheckBox"> {this.state.taskList[i].taskTitle} <div><button id="DoneTaskButton" className="btn btn-secondary btn-sm" name={this.state.taskList[i].taskTitle} onClick={this.UpdateDataToServer}>Task is done</button>
+                        </div></div></tr>);
+                    }
+                    
                 }
+                
             }
-            return tasks;
+            return tasks;  
         }
 
         renderTasks4() {
@@ -115,9 +124,11 @@ export class Employees extends Component {
             let tasks = [];
 
             for (let i = 0; i < this.state.taskList.length; i++) {
-                if (this.state.employeeList[4].employeeName === this.state.taskList[i].employeeName) {
-                    tasks.push(<tr><div className="EmployeeTaskCheckBox"> {this.state.taskList[i].taskTitle} <div><input type="checkbox" name={this.state.taskList[i].taskTitle} />
-                        <label>Done</label></div></div></tr>);
+                if (this.state.taskList[i].status !== "done      ") {
+                    if (this.state.employeeList[4].employeeName === this.state.taskList[i].employeeName) {
+                        tasks.push(<tr><div className="EmployeeTaskCheckBox"> {this.state.taskList[i].taskTitle} <div><button id="DoneTaskButton" className="btn btn-secondary btn-sm" name={this.state.taskList[i].taskTitle} onClick={this.UpdateDataToServer}>Task is done</button>
+                        </div></div></tr>);
+                    }
                 }
             }
             return tasks;
@@ -128,15 +139,17 @@ export class Employees extends Component {
             let tasks = [];
 
             for (let i = 0; i < this.state.taskList.length; i++) {
-                if (this.state.employeeList[5].employeeName === this.state.taskList[i].employeeName) {
-                    tasks.push(<tr><div className="EmployeeTaskCheckBox"> {this.state.taskList[i].taskTitle} <div><input type="checkbox" name={this.state.taskList[i].taskTitle} />
-                        <label>Done</label></div></div></tr>);
+                if (this.state.taskList[i].status !== "done      ") {
+                    if (this.state.employeeList[5].employeeName === this.state.taskList[i].employeeName) {
+                        tasks.push(<tr><div className="EmployeeTaskCheckBox"> {this.state.taskList[i].taskTitle} <div><button id="DoneTaskButton" className="btn btn-secondary btn-sm" name={this.state.taskList[i].taskTitle} onClick={this.UpdateDataToServer}>Task is done</button>
+                        </div></div></tr>);
+                    }
                 }
             }
             return tasks;
         }
 
-        
+
 
     UpdateDataToServer = () => {
 

@@ -21,11 +21,10 @@ th {
     box-shadow: 0 0 2px 1px gray;
 }
 
-
-
 td {
     vertical-align: top;
 }
+
 
 .OpenTasks {
     align-content: center;
@@ -56,7 +55,6 @@ td {
     box-shadow: 0 0 2px 1px gray;
     text-align: center;
     vertical-align: middle;
-    
     background-color: lightsteelblue;
     color: black;
     font-size: 15px;

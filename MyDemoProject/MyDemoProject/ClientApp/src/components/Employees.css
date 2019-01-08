@@ -22,3 +22,12 @@
     font-weight: bold;
     letter-spacing: 2px;
 }
+
+#DoneTaskButton {
+    width: auto;
+    text-align: center;
+    background-color: cornflowerblue;
+    padding-bottom: 5px;
+    font-weight: bold;
+    font-size: 13px;
+}
