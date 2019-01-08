@@ -1,6 +1,7 @@
 ﻿import React, { Component } from "react";
 import { Link } from 'react-router-dom';
 import { LinkContainer } from 'react-router-bootstrap';
+import './LogIn.css';
 
 export class LogIn extends Component {
     displayName = LogIn.name;
@@ -51,14 +52,13 @@ export class LogIn extends Component {
         
 
         return (
-            <div>
-                <h2> Please, enter your name and password to log in</h2>
-                <div>
-                    <label>Name</label>
-                    <input type="text" className="form-control" placeholder="Enter your name" onChange={e => this.setState({ ...this.state, employeeName: e.target.value })} />
-                 </div> 
+            <div id="LogInStyle">
 
-                <button type="submit" className="btn btn-primary" onClick={this.checkEmployee} > Submit</button>
+                <h2> Please, enter your name</h2>
+
+                    <input type="text" className="form-control" id="LogInInput" placeholder="Enter your name" onChange={e => this.setState({ ...this.state, employeeName: e.target.value })} />
+
+                <button type="submit" className="btn btn-primary" onClick={this.checkEmployee} >LogIn</button>
                 
             </div>
         );

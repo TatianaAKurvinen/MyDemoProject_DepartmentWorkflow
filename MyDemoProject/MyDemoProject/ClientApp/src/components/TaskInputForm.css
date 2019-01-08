@@ -1,0 +1,19 @@
+﻿.NewTaskInput {
+    height: 30px;
+    align-content: center;
+    box-shadow: 0 0 1px 1px;
+    margin: 3px 2px;
+}
+
+#NewTaskBtn {
+    height: 33px;
+    align-content: center;
+    text-align: center;
+    margin-bottom: 2px;
+    margin-left: 2px;
+    
+}
+
+
+
+

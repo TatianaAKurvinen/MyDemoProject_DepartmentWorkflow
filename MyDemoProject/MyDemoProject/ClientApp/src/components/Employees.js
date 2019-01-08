@@ -1,4 +1,8 @@
 ﻿import React, { Component } from "react";
+import OpenTasks from "./OpenTasks";
+import HeaderEmployee from "./HeaderEmployee";
+import './Employees.css';
+
 
 
 export class Employees extends Component {
@@ -10,22 +14,16 @@ export class Employees extends Component {
 
         this.state = {
             employeeList: [],
-            phraseList: [],
             taskList: [],
-            phraseSelection: []
+            doneTask: []
+            
+
         }
     }
-
+       
     componentWillMount() {
 
-        fetch('https://localhost:44340/api/motivation')
-            .then(response => response.json())
-            .then((phrase) => {
-                this.setState({
-                    phraseList: phrase
-                });
-                console.log('motivation fetch');
-            });
+        
 
         fetch('https://localhost:44340/api/employee')
             .then(response => response.json())
@@ -47,7 +45,7 @@ export class Employees extends Component {
             });
     }
 
-    renderEmployees() {
+        renderEmployees() {
 
         let employees = [];
 
@@ -57,228 +55,162 @@ export class Employees extends Component {
         return employees;
     }
 
-    renderOpenTasks() {
+        renderTasks0() {
 
-        let openTasks = [];
+            let tasks = [];
 
-        for (let i = 0; i < this.state.taskList.length; i++) {
-            if (this.state.taskList[i].employeeName == null) {
-                openTasks.push(<tr>{this.state.taskList[i].taskTitle}</tr>)
+            for (let i = 0; i < this.state.taskList.length; i++) {
+                if (this.state.employeeList[0].employeeName === this.state.taskList[i].employeeName) {
+                    tasks.push(<tr><div className="EmployeeTaskCheckBox"> {this.state.taskList[i].taskTitle} <div><input type="checkbox" name={this.state.taskList[i].taskTitle} />
+                        <label>Done</label></div></div></tr>);
+
+                      //  onClick={this.setState({ ...this.state, doneTask: this.name })}
+
+                    
+                        
+                }
             }
+            return tasks;
         }
-        return openTasks;
-    }
 
-    renderTasks0() {
+        renderTasks1() {
 
-        let tasks = [];
+            let tasks = [];
 
-        for (let i = 0; i < this.state.taskList.length; i++) {
-            if (this.state.employeeList[0].employeeName === this.state.taskList[i].employeeName) {
-                tasks.push(<tr>{this.state.taskList[i].taskTitle} <div><input type="checkbox"/ >
-                    <label>Task is done</label></div></tr>);
+            for (let i = 0; i < this.state.taskList.length; i++) {
+                if (this.state.employeeList[1].employeeName === this.state.taskList[i].employeeName) {
+                    tasks.push(<tr><div className="EmployeeTaskCheckBox"> {this.state.taskList[i].taskTitle} <div><input type="checkbox" name={this.state.taskList[i].taskTitle} />
+                        <label>Done</label></div></div></tr>);
+                }
             }
+            return tasks;
         }
-        return tasks;
-    }
 
-    renderTasks1() {
+        renderTasks2() {
 
-        let tasks = [];
+            let tasks = [];
 
-        for (let i = 0; i < this.state.taskList.length; i++) {
-            if (this.state.employeeList[1].employeeName === this.state.taskList[i].employeeName) {
-                tasks.push(<tr>{this.state.taskList[i].taskTitle} <div><input type="checkbox" />
-                    <label>Task is done</label></div></tr>);
+            for (let i = 0; i < this.state.taskList.length; i++) {
+                if (this.state.employeeList[2].employeeName === this.state.taskList[i].employeeName) {
+                    tasks.push(<tr><div className="EmployeeTaskCheckBox"> {this.state.taskList[i].taskTitle} <div><input type="checkbox" name={this.state.taskList[i].taskTitle} />
+                        <label>Done</label></div></div></tr>);
+                }
             }
+            return tasks;
         }
-        return tasks;
-    }
 
-    renderTasks2() {
+        renderTasks3() {
 
-        let tasks = [];
+            let tasks = [];
 
-        for (let i = 0; i < this.state.taskList.length; i++) {
-            if (this.state.employeeList[2].employeeName === this.state.taskList[i].employeeName) {
-                tasks.push(<tr>{this.state.taskList[i].taskTitle} <div><input type="checkbox" />
-                    <label>Task is done</label></div></tr>);
+            for (let i = 0; i < this.state.taskList.length; i++) {
+                if (this.state.employeeList[3].employeeName === this.state.taskList[i].employeeName) {
+                    tasks.push(<tr><div className="EmployeeTaskCheckBox"> {this.state.taskList[i].taskTitle} <div><input type="checkbox" name={this.state.taskList[i].taskTitle} />
+                        <label>Done</label></div></div></tr>);
+                }
             }
+            return tasks;
         }
-        return tasks;
-    }
 
-    renderTasks3() {
+        renderTasks4() {
 
-        let tasks = [];
+            let tasks = [];
 
-        for (let i = 0; i < this.state.taskList.length; i++) {
-            if (this.state.employeeList[3].employeeName === this.state.taskList[i].employeeName) {
-                tasks.push(<tr>{this.state.taskList[i].taskTitle} <div><input type="checkbox" />
-                    <label>Task is done</label></div></tr>);
+            for (let i = 0; i < this.state.taskList.length; i++) {
+                if (this.state.employeeList[4].employeeName === this.state.taskList[i].employeeName) {
+                    tasks.push(<tr><div className="EmployeeTaskCheckBox"> {this.state.taskList[i].taskTitle} <div><input type="checkbox" name={this.state.taskList[i].taskTitle} />
+                        <label>Done</label></div></div></tr>);
+                }
             }
+            return tasks;
         }
-        return tasks;
-    }
 
-    renderTasks4() {
+        renderTasks5() {
 
-        let tasks = [];
+            let tasks = [];
 
-        for (let i = 0; i < this.state.taskList.length; i++) {
-            if (this.state.employeeList[4].employeeName === this.state.taskList[i].employeeName) {
-                tasks.push(<tr>{this.state.taskList[i].taskTitle} <div><input type="checkbox" />
-                    <label>Task is done</label></div></tr>);
+            for (let i = 0; i < this.state.taskList.length; i++) {
+                if (this.state.employeeList[5].employeeName === this.state.taskList[i].employeeName) {
+                    tasks.push(<tr><div className="EmployeeTaskCheckBox"> {this.state.taskList[i].taskTitle} <div><input type="checkbox" name={this.state.taskList[i].taskTitle} />
+                        <label>Done</label></div></div></tr>);
+                }
             }
+            return tasks;
         }
-        return tasks;
+
+        
+
+    UpdateDataToServer = () => {
+
+        const { doneTask } = this.state.doneTask;
+
+        fetch('https://localhost:44340/api/task', {
+            method: 'PUT',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                taskTitle: doneTask,
+                status: 'done'
+
+            })
+
+        }).then((response) => response.json())
+            .then((responseJson) => {
+
+            }).catch((error) => {
+                console.error(error);
+            });
     }
-
-    renderTasks5() {
-
-        let tasks = [];
-
-        for (let i = 0; i < this.state.taskList.length; i++) {
-            if (this.state.employeeList[5].employeeName === this.state.taskList[i].employeeName) {
-                tasks.push(<tr>{this.state.taskList[i].taskTitle} <div><input type="checkbox" />
-                    <label>Task is done</label></div></tr>);
-            }
-        }
-        return tasks;
-    }
-
-    renderTasks6() {
-
-        let tasks = [];
-
-        for (let i = 0; i < this.state.taskList.length; i++) {
-            if (this.state.employeeList[6].employeeName === this.state.taskList[i].employeeName) {
-                tasks.push(<tr>{this.state.taskList[i].taskTitle} <div><input type="checkbox" />
-                    <label>Task is done</label></div></tr>);
-            }
-        }
-        return tasks;
-    }
-
-    renderTasks7() {
-
-        let tasks = [];
-
-        for (let i = 0; i < this.state.taskList.length; i++) {
-            if (this.state.employeeList[7].employeeName === this.state.taskList[i].employeeName) {
-                tasks.push(<tr>{this.state.taskList[i].taskTitle} <div><input type="checkbox" />
-                    <label>Task is done</label></div></tr>);
-            }
-        }
-        return tasks;
-    }
-
-    renderTasks8() {
-
-        let tasks = [];
-
-        for (let i = 0; i < this.state.taskList.length; i++) {
-            if (this.state.employeeList[8].employeeName === this.state.taskList[i].employeeName) {
-                tasks.push(<tr>{this.state.taskList[i].taskTitle} <div><input type="checkbox" />
-                    <label>Task is done</label></div></tr>);
-            }
-        }
-        return tasks;
-    }
-
-    renderTasks9() {
-
-        let tasks = [];
-
-        for (let i = 0; i < this.state.taskList.length; i++) {
-            if (this.state.employeeList[9].employeeName === this.state.taskList[i].employeeName) {
-                tasks.push(<tr>{this.state.taskList[i].taskTitle} <div><input type="checkbox" />
-                    <label>Task is done</label></div></tr>);
-            }
-        }
-        return tasks;
-    }
-
     
     render() {
 
-        console.log(this.state.taskList)
+        
         
         return (
 
             
 
             <div>
+                <div>
+                    <HeaderEmployee />
+                </div>
                 
-                <table>
-                    <tbody>
-                        <td>
-                            
-                        </td>
-
-                        <td>
-                            Onni ei tule valmiina, vaan omista teoista.
-                        </td>
-
-                        <td>
-                        //Here will be time and date
-                        </td>
-                    </tbody>
-                </table>
+                
 
                 <table>
                     <th>Open tasks</th>
                     
-                        {this.renderEmployees()}
+                    {this.renderEmployees()}
                     
-                    <tbody>
-                        <td>
-                        
-                                {this.renderOpenTasks()}
-                        
-                        </td>
+                    <tbody>   
+                            <OpenTasks />
+                            
                         <td>
                             {this.renderTasks0()}
-                        </td>
+                        </td>    
 
                         <td>
                             {this.renderTasks1()}
-                        </td>
+                        </td>    
 
                         <td>
                             {this.renderTasks2()}
-                        </td>
+                        </td>    
 
                         <td>
                             {this.renderTasks3()}
-                        </td>
-                            
+                        </td>  
+                        
                         <td>
                             {this.renderTasks4()}
-                        </td>
-                            
+                        </td>    
+
                         <td>
                             {this.renderTasks5()}
-                        </td>
-                            
-                        <td>
-                            {this.renderTasks6()}
-                        </td>
-                            
-                        <td>
-                            {this.renderTasks7()}
-                        </td>
-                            
-                        <td>
-                            {this.renderTasks8()}
-                        </td>
-                            
-                        <td>
-                            {this.renderTasks9()}
-                        </td>
-                            
-                       
-                            
+                        </td>    
+
                     </tbody>
                 </table>
             </div>

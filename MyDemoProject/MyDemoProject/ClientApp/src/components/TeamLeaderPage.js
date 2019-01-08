@@ -1,4 +1,6 @@
 ﻿import React, { Component } from "react";
+import HeaderLeader from "./HeaderLeader";
+import './TeamLeaderPage.css';
 
 export class TeamLeaderPage extends Component {
     displayName = TeamLeaderPage.name;
@@ -12,7 +14,9 @@ export class TeamLeaderPage extends Component {
             taskList: [],
             phraseSelection: [],
             newTask: '',
-            assignedEmployee: ''
+            assignedEmployee: '',
+            openTaskAss: '',
+            newEmployeeAss: ''
         }
     }
 
@@ -66,8 +70,10 @@ export class TeamLeaderPage extends Component {
         {
             if (this.state.taskList[i].employeeName == null)
             {
-                openTasks.push(<tr>{this.state.taskList[i].taskTitle}<div>
-                    <input type="text" name="setEmployee" placeholder="Assign employee to task"/></div>
+                openTasks.push(<tr><div className="OpenTasks">{this.state.taskList[i].taskTitle}
+                    <div ><input type="text" id="AssignEmployee" name={this.state.taskList[i].taskTitle} placeholder="Assign employee" onChange={e => this.setState({ ...this.state, newEmployeeAss: e.target.value, openTaskAss:this.name })} />
+                    <button id="AssignEmployeeButton"
+                            onClick={this.UpdateDataToServer} className="btn btn-secondary btn-sm">OK</button></div></div>
                 </tr>)
             }
         }
@@ -82,7 +88,7 @@ export class TeamLeaderPage extends Component {
         {
             if (this.state.employeeList[0].employeeName === this.state.taskList[i].employeeName)
             {
-                tasks.push(<tr>{this.state.taskList[i].taskTitle}</tr>);
+                tasks.push(<tr><div className="EmployeeTask"> {this.state.taskList[i].taskTitle}</div></tr>);
             }
         }
         return tasks;
@@ -96,7 +102,7 @@ export class TeamLeaderPage extends Component {
         {
             if (this.state.employeeList[1].employeeName === this.state.taskList[i].employeeName)
             {
-                tasks.push(<tr>{this.state.taskList[i].taskTitle}</tr>);
+                tasks.push(<tr><div className="EmployeeTask"> {this.state.taskList[i].taskTitle}</div></tr>);
             }
         }
         return tasks;
@@ -110,7 +116,7 @@ export class TeamLeaderPage extends Component {
         {
             if (this.state.employeeList[2].employeeName === this.state.taskList[i].employeeName)
             {
-                tasks.push(<tr>{this.state.taskList[i].taskTitle}</tr>);
+                tasks.push(<tr><div className="EmployeeTask"> {this.state.taskList[i].taskTitle}</div></tr>);
             }
         }
         return tasks;
@@ -124,7 +130,7 @@ export class TeamLeaderPage extends Component {
         {
             if (this.state.employeeList[3].employeeName === this.state.taskList[i].employeeName)
             {
-                tasks.push(<tr>{this.state.taskList[i].taskTitle}</tr>);
+                tasks.push(<tr><div className="EmployeeTask"> {this.state.taskList[i].taskTitle}</div></tr>);
             }
         }
         return tasks;
@@ -138,7 +144,7 @@ export class TeamLeaderPage extends Component {
         {
             if (this.state.employeeList[4].employeeName === this.state.taskList[i].employeeName)
             {
-                tasks.push(<tr>{this.state.taskList[i].taskTitle}</tr>);
+                tasks.push(<tr><div className="EmployeeTask"> {this.state.taskList[i].taskTitle}</div></tr>);
             }
         }
         return tasks;
@@ -152,83 +158,31 @@ export class TeamLeaderPage extends Component {
         {
             if (this.state.employeeList[5].employeeName === this.state.taskList[i].employeeName)
             {
-                tasks.push(<tr>{this.state.taskList[i].taskTitle}</tr>);
+                tasks.push(<tr><div className="EmployeeTask"> {this.state.taskList[i].taskTitle}</div></tr>);
             }
         }
         return tasks;
     }
 
-    renderTasks6() {
 
-        let tasks = [];
+    
 
-        for (let i = 0; i < this.state.taskList.length; i++)
-        {
-            if (this.state.employeeList[6].employeeName === this.state.taskList[i].employeeName)
-            {
-                tasks.push(<tr>{this.state.taskList[i].taskTitle}</tr>);
-            }
-        }
-        return tasks;
-    }
+    UpdateDataToServer = () => {
 
-    renderTasks7() {
+        const { openTaskAss } = this.state;
+        const { newEmployeeAss } = this.state;
 
-        let tasks = [];
-
-        for (let i = 0; i < this.state.taskList.length; i++)
-        {
-            if (this.state.employeeList[7].employeeName === this.state.taskList[i].employeeName)
-            {
-                tasks.push(<tr>{this.state.taskList[i].taskTitle}</tr>);
-            }
-        }
-        return tasks;
-    }
-
-    renderTasks8() {
-
-        let tasks = [];
-
-        for (let i = 0; i < this.state.taskList.length; i++)
-        {
-            if (this.state.employeeList[8].employeeName === this.state.taskList[i].employeeName)
-            {
-                tasks.push(<tr>{this.state.taskList[i].taskTitle}</tr>);
-            }
-        }
-        return tasks;
-    }
-
-    renderTasks9() {
-
-        let tasks = [];
-
-        for (let i = 0; i < this.state.taskList.length; i++)
-        {
-            if (this.state.employeeList[9].employeeName === this.state.taskList[i].employeeName)
-            {
-                tasks.push(<tr>{this.state.taskList[i].taskTitle}</tr>);
-            }
-        }
-        return tasks;
-    }
-
-    InsertDataToServer = () => {
-
-        const { newTask } = this.state;
-        const { assignedEmployee } = this.state;
-       
         fetch('https://localhost:44340/api/task', {
-            method: 'POST',
+            method: 'PUT',
+            mode: "no-cors",
             headers: {
                 'Accept': 'application/json',
-                'Content-Type': 'application/json',
+                'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                taskTitle: newTask,
-                employeeName: assignedEmployee,
-                
+                taskTitle: openTaskAss,
+                employeeName: newEmployeeAss
+
             })
 
         }).then((response) => response.json())
@@ -237,8 +191,6 @@ export class TeamLeaderPage extends Component {
             }).catch((error) => {
                 console.error(error);
             });
-
-
     }
 
     
@@ -253,40 +205,10 @@ export class TeamLeaderPage extends Component {
             <div>
 
                 <table>
-                    <tbody>
-                        <td>
-                            <div>
+                    
 
-                                <input type="text" name="newTask"
-
-                                    
-                                    placeholder="Enter new task"
-
-                                    onChange={e => this.setState({ ...this.state, newTask: e.target.value })}
-                                />
-                                <input type="text" name="assignedEmployee"
-
-                                    
-                                    placeholder="Assign employee"
-
-                                    onChange={e => this.setState({ ...this.state, assignedEmployee: e.target.value })}
-
-
-                                />
-                                <button
-                                    onClick={this.InsertDataToServer} className="btn btn-secondary btn-sm"> Add new task </button>
-
-                            </div>
-                        </td>
-
-                        <td>
-                            Onni ei tule valmiina, vaan omista teoista.
-                        </td>
-
-                        <td>
-                        //Here will be time and date
-                        </td>
-                    </tbody>
+                        <HeaderLeader />
+                    
                 </table>
 
                 <table>
@@ -296,10 +218,9 @@ export class TeamLeaderPage extends Component {
 
                     <tbody>
                         <td>
-
                             {this.renderOpenTasks()}
-
                         </td>
+
                         <td>
                             {this.renderTasks0()}
                         </td>
@@ -323,24 +244,6 @@ export class TeamLeaderPage extends Component {
                         <td>
                             {this.renderTasks5()}
                         </td>
-
-                        <td>
-                            {this.renderTasks6()}
-                        </td>
-
-                        <td>
-                            {this.renderTasks7()}
-                        </td>
-
-                        <td>
-                            {this.renderTasks8()}
-                        </td>
-
-                        <td>
-                            {this.renderTasks9()}
-                        </td>
-
-
 
                     </tbody>
                 </table>
