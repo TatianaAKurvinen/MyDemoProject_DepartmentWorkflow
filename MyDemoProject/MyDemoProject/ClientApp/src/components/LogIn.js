@@ -53,7 +53,7 @@ export class LogIn extends Component {
         return (
             <div id="LogInStyle">
 
-                <h2> Please, enter your name</h2>
+                <h2> Please, enter your name and password</h2>
 
                     <input type="text" className="form-control" id="LogInInput1" placeholder="Enter your name" onChange={e => this.setState({ ...this.state, employeeName: e.target.value })} />
                     <input type="password" className="form-control" id ="LogInInput2" placeholder="Enter your password" onChange={e => this.setState({ ...this.state, password: e.target.value })} />

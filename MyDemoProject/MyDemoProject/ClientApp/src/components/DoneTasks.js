@@ -13,7 +13,7 @@ export default class DoneTasks extends Component {
         }
     }
 
-    componentWillMount() {
+    componentDidMount() {
 
         fetch('https://localhost:44340/api/employee')
             .then(response => response.json())
@@ -44,7 +44,6 @@ export default class DoneTasks extends Component {
         }
         return employees;
     }
-
 
     renderTasks0() {
 

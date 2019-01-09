@@ -19,7 +19,7 @@ export class Employees extends Component {
         }
     }
        
-    componentWillMount() {
+    componentDidMount() {
     
 
         fetch('https://localhost:44340/api/employee')

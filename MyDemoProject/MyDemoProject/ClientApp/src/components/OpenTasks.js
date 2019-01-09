@@ -22,6 +22,8 @@ export default class OpenTasks extends Component {
                 });
                 console.log('task fetch');
             });
+
+        
     }
 
 

@@ -28,12 +28,10 @@ export default class EmployeesTasks extends Component {
             });
 
         return taskList;
+
     }
        
     
-
-
-
     render() {
 
 
