@@ -27,6 +27,7 @@ export class Employees extends Component {
             .then(response => response.json())
             .then((employee) => {
                 this.setState({
+                    ...this.state,
                     employeeList: employee
 
                 });
@@ -37,6 +38,7 @@ export class Employees extends Component {
             .then(response => response.json())
             .then((task) => {
                 this.setState({
+                    ...this.state,
                     taskList: task
                 });
                 console.log('task fetch');

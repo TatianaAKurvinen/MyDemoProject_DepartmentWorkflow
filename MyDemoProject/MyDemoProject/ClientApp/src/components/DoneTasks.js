@@ -29,8 +29,7 @@ export default class DoneTasks extends Component {
         fetch('https://localhost:44340/api/task')
             .then(response => response.json())
             .then((task) => {
-                this.setState({
-                    ...this.state,
+                this.setState({...this.state,
                     taskList: task
                 });
                 console.log('task fetch');

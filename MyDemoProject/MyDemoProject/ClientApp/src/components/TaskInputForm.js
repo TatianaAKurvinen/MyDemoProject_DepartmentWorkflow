@@ -16,6 +16,7 @@ export default class TaskInputForm extends Component {
         }
     }
 
+    
     componentDidMount() {
 
         fetch('https://localhost:44340/api/employee')
@@ -65,7 +66,7 @@ export default class TaskInputForm extends Component {
                 console.error(error);
             });
 
-
+        this.forceUpdate();
     }
     render() {
 

@@ -21,6 +21,7 @@ export class LogIn extends Component {
             .then(response => response.json())
             .then((employee) => {
                 this.setState({
+                    ...this.state,
                     employeeList: employee,
 
                 });
