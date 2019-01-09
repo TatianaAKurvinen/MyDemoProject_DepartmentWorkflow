@@ -16,12 +16,12 @@ export default class TaskInputForm extends Component {
         }
     }
 
-    componentWillMount() {
+    componentDidMount() {
 
         fetch('https://localhost:44340/api/employee')
             .then(response => response.json())
             .then((employee) => {
-                this.setState({
+                this.setState({...this.state,
                     employeeList: employee
 
                 });
@@ -32,6 +32,7 @@ export default class TaskInputForm extends Component {
             .then(response => response.json())
             .then((task) => {
                 this.setState({
+                    ...this.state,
                     taskList: task
                 });
                 console.log('task fetch');
@@ -58,6 +59,7 @@ export default class TaskInputForm extends Component {
 
         }).then((response) => response.json())
             .then((responseJson) => {
+
 
             }).catch((error) => {
                 console.error(error);

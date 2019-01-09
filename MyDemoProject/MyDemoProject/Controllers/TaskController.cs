@@ -41,7 +41,7 @@ namespace MyDemoProject.Controllers
             if (opentask != null)
             {
 
-                opentask.TaskTitle = newData.TaskTitle;
+                //opentask.TaskTitle = newData.TaskTitle;
                 opentask.EmployeeName = newData.EmployeeName;
                 opentask.Status = newData.Status;
                 

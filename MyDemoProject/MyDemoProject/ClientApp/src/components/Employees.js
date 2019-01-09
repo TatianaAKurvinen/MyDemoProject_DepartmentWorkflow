@@ -15,7 +15,8 @@ export class Employees extends Component {
         this.state = {
             employeeList: [],
             taskList: [],
-            doneTask: []
+            doneTask: [],
+            employeeDone: []
         }
     }
        
@@ -57,12 +58,14 @@ export class Employees extends Component {
             let tasks = [];
            
             for (let i = 0; i < this.state.taskList.length; i++) {
-                if (this.state.taskList[i].status !== "done      ") {
+                let title = this.state.taskList[i].taskTitle;
+
+                if (this.state.taskList[i].status !== "done") {
                 if (this.state.employeeList[0].employeeName === this.state.taskList[i].employeeName) {
-                    tasks.push(<tr><div className="EmployeeTaskCheckBox"> {this.state.taskList[i].taskTitle} <div><button id="DoneTaskButton" className="btn btn-secondary btn-sm" name={this.state.taskList[i].taskTitle} onClick={this.UpdateDataToServer}>Task is done</button>
+                    tasks.push(<tr><div className="EmployeeTaskCheckBox"> {this.state.taskList[i].taskTitle} <div><button id="DoneTaskButton" className="btn btn-secondary btn-sm" name={this.state.taskList[i].taskTitle} onClick={() =>this.UpdateDataToServer0(title)}>Task is done</button>
                         </div></div></tr>);
 
-                      //  onClick={this.setState({ ...this.state, doneTask: this.name })}
+                      
 
                     }
                 }
@@ -70,100 +73,124 @@ export class Employees extends Component {
             return tasks;
             }
         
-        renderTasks1() {
+    renderTasks1() {
 
-            let tasks = [];
+        let tasks = [];
 
-            for (let i = 0; i < this.state.taskList.length; i++) {
-             
-                if (this.state.taskList[i].status !== "done      ") {
-                    if (this.state.employeeList[1].employeeName === this.state.taskList[i].employeeName) {
-                        tasks.push(<tr><div className="EmployeeTaskCheckBox"> {this.state.taskList[i].taskTitle} <div><button id="DoneTaskButton" className="btn btn-secondary btn-sm" name={this.state.taskList[i].taskTitle} onClick={this.UpdateDataToServer}>Task is done</button>
-                        </div></div></tr>);
-                    }
-                }
-            }
-            return tasks;
-        }
+        for (let i = 0; i < this.state.taskList.length; i++) {
+            let title = this.state.taskList[i].taskTitle;
 
-        renderTasks2() {
+            if (this.state.taskList[i].status !== "done") {
+                if (this.state.employeeList[1].employeeName === this.state.taskList[i].employeeName) {
+                    tasks.push(<tr><div className="EmployeeTaskCheckBox"> {this.state.taskList[i].taskTitle} <div><button id="DoneTaskButton" className="btn btn-secondary btn-sm" name={this.state.taskList[i].taskTitle} onClick={() => this.UpdateDataToServer1(title)}>Task is done</button>
+                    </div></div></tr>);
 
-            let tasks = [];
 
-            for (let i = 0; i < this.state.taskList.length; i++) {
-                if (this.state.taskList[i].status !== "done      ") {
-                    if (this.state.employeeList[2].employeeName === this.state.taskList[i].employeeName) {
-                        tasks.push(<tr><div className="EmployeeTaskCheckBox"> {this.state.taskList[i].taskTitle} <div><button id="DoneTaskButton" className="btn btn-secondary btn-sm" name={this.state.taskList[i].taskTitle} onClick={this.UpdateDataToServer}>Task is done</button>
-                        </div></div></tr>);
-                    }
 
                 }
             }
-            return tasks;
         }
+        return tasks;
+    }
 
-        renderTasks3() {
+    renderTasks2() {
 
-            let tasks = [];
+        let tasks = [];
 
-            for (let i = 0; i < this.state.taskList.length; i++) {
-                if (this.state.taskList[i].status !== "done      ") {
-                    if (this.state.employeeList[3].employeeName === this.state.taskList[i].employeeName) {
-                        tasks.push(<tr><div className="EmployeeTaskCheckBox"> {this.state.taskList[i].taskTitle} <div><button id="DoneTaskButton" className="btn btn-secondary btn-sm" name={this.state.taskList[i].taskTitle} onClick={this.UpdateDataToServer}>Task is done</button>
-                        </div></div></tr>);
-                    }
-                    
-                }
-                
-            }
-            return tasks;  
-        }
+        for (let i = 0; i < this.state.taskList.length; i++) {
+            let title = this.state.taskList[i].taskTitle;
 
-        renderTasks4() {
+            if (this.state.taskList[i].status !== "done") {
+                if (this.state.employeeList[2].employeeName === this.state.taskList[i].employeeName) {
+                    tasks.push(<tr><div className="EmployeeTaskCheckBox"> {this.state.taskList[i].taskTitle} <div><button id="DoneTaskButton" className="btn btn-secondary btn-sm" name={this.state.taskList[i].taskTitle} onClick={() => this.UpdateDataToServer2(title)}>Task is done</button>
+                    </div></div></tr>);
 
-            let tasks = [];
 
-            for (let i = 0; i < this.state.taskList.length; i++) {
-                if (this.state.taskList[i].status !== "done      ") {
-                    if (this.state.employeeList[4].employeeName === this.state.taskList[i].employeeName) {
-                        tasks.push(<tr><div className="EmployeeTaskCheckBox"> {this.state.taskList[i].taskTitle} <div><button id="DoneTaskButton" className="btn btn-secondary btn-sm" name={this.state.taskList[i].taskTitle} onClick={this.UpdateDataToServer}>Task is done</button>
-                        </div></div></tr>);
-                    }
+
                 }
             }
-            return tasks;
         }
+        return tasks;
+    }
 
-        renderTasks5() {
+    renderTasks3() {
 
-            let tasks = [];
+        let tasks = [];
 
-            for (let i = 0; i < this.state.taskList.length; i++) {
-                if (this.state.taskList[i].status !== "done      ") {
-                    if (this.state.employeeList[5].employeeName === this.state.taskList[i].employeeName) {
-                        tasks.push(<tr><div className="EmployeeTaskCheckBox"> {this.state.taskList[i].taskTitle} <div><button id="DoneTaskButton" className="btn btn-secondary btn-sm" name={this.state.taskList[i].taskTitle} onClick={this.UpdateDataToServer}>Task is done</button>
-                        </div></div></tr>);
-                    }
+        for (let i = 0; i < this.state.taskList.length; i++) {
+            let title = this.state.taskList[i].taskTitle;
+
+            if (this.state.taskList[i].status !== "done") {
+                if (this.state.employeeList[3].employeeName === this.state.taskList[i].employeeName) {
+                    tasks.push(<tr><div className="EmployeeTaskCheckBox"> {this.state.taskList[i].taskTitle} <div><button id="DoneTaskButton" className="btn btn-secondary btn-sm" name={this.state.taskList[i].taskTitle} onClick={() => this.UpdateDataToServer3(title)}>Task is done</button>
+                    </div></div></tr>);
+
+
+
                 }
             }
-            return tasks;
         }
+        return tasks;
+    }
+
+    renderTasks4() {
+
+        let tasks = [];
+
+        for (let i = 0; i < this.state.taskList.length; i++) {
+            let title = this.state.taskList[i].taskTitle;
+
+            if (this.state.taskList[i].status !== "done") {
+                if (this.state.employeeList[4].employeeName === this.state.taskList[i].employeeName) {
+                    tasks.push(<tr><div className="EmployeeTaskCheckBox"> {this.state.taskList[i].taskTitle} <div><button id="DoneTaskButton" className="btn btn-secondary btn-sm" name={this.state.taskList[i].taskTitle} onClick={() => this.UpdateDataToServer4(title)}>Task is done</button>
+                    </div></div></tr>);
 
 
 
-    UpdateDataToServer = () => {
+                }
+            }
+        }
+        return tasks;
+    }
+
+    renderTasks5() {
+
+        let tasks = [];
+
+        for (let i = 0; i < this.state.taskList.length; i++) {
+            let title = this.state.taskList[i].taskTitle;
+
+            if (this.state.taskList[i].status !== "done") {
+                if (this.state.employeeList[5].employeeName === this.state.taskList[i].employeeName) {
+                    tasks.push(<tr><div className="EmployeeTaskCheckBox"> {this.state.taskList[i].taskTitle} <div><button id="DoneTaskButton" className="btn btn-secondary btn-sm" name={this.state.taskList[i].taskTitle} onClick={() => this.UpdateDataToServer5(title)}>Task is done</button>
+                    </div></div></tr>);
+
+
+
+                }
+            }
+        }
+        return tasks;
+    }
+
+
+
+    UpdateDataToServer0 = (title) => {
 
         const { doneTask } = this.state.doneTask;
+        const { employeeDone } = this.state.employeeList;
 
-        fetch('https://localhost:44340/api/task', {
+        fetch('https://localhost:44340/api/task/' + title, {
             method: 'PUT',
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({
-                taskTitle: doneTask,
-                status: 'done'
+                status: "done",
+                EmployeeName: "Aki Jokinen",
+                
+              
 
             })
 
@@ -174,7 +201,146 @@ export class Employees extends Component {
                 console.error(error);
             });
     }
-    
+
+    UpdateDataToServer1 = (title) => {
+
+        const { doneTask } = this.state.doneTask;
+        const { employeeDone } = this.state.employeeList;
+
+        fetch('https://localhost:44340/api/task/' + title, {
+            method: 'PUT',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                status: "done",
+                EmployeeName: "Antti Rantanen",
+
+
+
+            })
+
+        }).then((response) => response.json())
+            .then((responseJson) => {
+
+            }).catch((error) => {
+                console.error(error);
+            });
+    }
+
+    UpdateDataToServer2 = (title) => {
+
+        const { doneTask } = this.state.doneTask;
+        const { employeeDone } = this.state.employeeList;
+
+        fetch('https://localhost:44340/api/task/' + title, {
+            method: 'PUT',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                status: "done",
+                EmployeeName: "Laura Virtanen",
+
+
+
+            })
+
+        }).then((response) => response.json())
+            .then((responseJson) => {
+
+            }).catch((error) => {
+                console.error(error);
+            });
+    }
+
+    UpdateDataToServer3 = (title) => {
+
+        const { doneTask } = this.state.doneTask;
+        const { employeeDone } = this.state.employeeList;
+
+        fetch('https://localhost:44340/api/task/' + title, {
+            method: 'PUT',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                status: "done",
+                EmployeeName: "Melissa Aaltonen",
+
+
+
+            })
+
+        }).then((response) => response.json())
+            .then((responseJson) => {
+
+            }).catch((error) => {
+                console.error(error);
+            });
+    }
+
+    UpdateDataToServer4 = (title) => {
+
+        const { doneTask } = this.state.doneTask;
+        const { employeeDone } = this.state.employeeList;
+
+        fetch('https://localhost:44340/api/task/' + title, {
+            method: 'PUT',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                status: "done",
+                EmployeeName: "Tomi Lahtinen",
+
+
+
+            })
+
+        }).then((response) => response.json())
+            .then((responseJson) => {
+
+            }).catch((error) => {
+                console.error(error);
+            });
+    }
+
+    UpdateDataToServer5 = (title) => {
+
+        const { doneTask } = this.state.doneTask;
+        const { employeeDone } = this.state.employeeList;
+
+        fetch('https://localhost:44340/api/task/' + title, {
+            method: 'PUT',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                status: "done",
+                EmployeeName: "Veera Korhonen",
+
+
+
+            })
+
+        }).then((response) => response.json())
+            .then((responseJson) => {
+
+            }).catch((error) => {
+                console.error(error);
+            });
+    }
+
+
+
+
+
     render() {
 
         

@@ -19,6 +19,7 @@ export default class DoneTasks extends Component {
             .then(response => response.json())
             .then((employee) => {
                 this.setState({
+                    ...this.state,
                     employeeList: employee
 
                 });
@@ -29,6 +30,7 @@ export default class DoneTasks extends Component {
             .then(response => response.json())
             .then((task) => {
                 this.setState({
+                    ...this.state,
                     taskList: task
                 });
                 console.log('task fetch');
@@ -50,9 +52,10 @@ export default class DoneTasks extends Component {
         let doneTasks = [];
 
         for (let i = 0; i < this.state.taskList.length; i++) {
-            if (this.state.taskList[i].status === "done      ") {
+            let title = this.state.taskList[i].taskTitle;
+            if (this.state.taskList[i].status === "done") {
                 if (this.state.employeeList[0].employeeName === this.state.taskList[i].employeeName) {
-                    doneTasks.push(<tr><div className="EmployeeTask"> {this.state.taskList[i].taskTitle}<div><button id="DeleteButton" className="btn btn-secondary btn-sm" name={this.state.taskList[i].taskTitle} onClick={this.DeleteDataOnServer}> Confirm</button>
+                    doneTasks.push(<tr><div className="EmployeeTask"> {this.state.taskList[i].taskTitle}<div><button id="DeleteButton" className="btn btn-secondary btn-sm" name={this.state.taskList[i].taskTitle} onClick={()=>this.DeleteDataOnServer(title)}> Confirm</button>
                     </div></div></tr>);
                 }
             }
@@ -65,10 +68,11 @@ export default class DoneTasks extends Component {
         let doneTasks = [];
 
         for (let i = 0; i < this.state.taskList.length; i++) {
-            if (this.state.taskList[i].status === "done      ") {
+            let title = this.state.taskList[i].taskTitle;
+            if (this.state.taskList[i].status === "done") {
                 if (this.state.employeeList[1].employeeName === this.state.taskList[i].employeeName) {
-                    doneTasks.push(<tr><div className="EmployeeTask"> {this.state.taskList[i].taskTitle}<div><button id="DeleteButton" className="btn btn-secondary btn-sm" name={this.state.taskList[i].taskTitle} onClick={this.DeleteDataOnServer}>Confirm</button>
-                            </div></div></tr>);
+                    doneTasks.push(<tr><div className="EmployeeTask"> {this.state.taskList[i].taskTitle}<div><button id="DeleteButton" className="btn btn-secondary btn-sm" name={this.state.taskList[i].taskTitle} onClick={() => this.DeleteDataOnServer(title)}> Confirm</button>
+                    </div></div></tr>);
                 }
             }
         }
@@ -80,10 +84,11 @@ export default class DoneTasks extends Component {
         let doneTasks = [];
 
         for (let i = 0; i < this.state.taskList.length; i++) {
-            if (this.state.taskList[i].status === "done      ") {
+            let title = this.state.taskList[i].taskTitle;
+            if (this.state.taskList[i].status === "done") {
                 if (this.state.employeeList[2].employeeName === this.state.taskList[i].employeeName) {
-                    doneTasks.push(<tr><div className="EmployeeTask"> {this.state.taskList[i].taskTitle}<div><button id="DeleteButton" className="btn btn-secondary btn-sm" name={this.state.taskList[i].taskTitle} onClick={this.DeleteDataOnServer}>Confirm</button>
-                            </div></div></tr>);
+                    doneTasks.push(<tr><div className="EmployeeTask"> {this.state.taskList[i].taskTitle}<div><button id="DeleteButton" className="btn btn-secondary btn-sm" name={this.state.taskList[i].taskTitle} onClick={() => this.DeleteDataOnServer(title)}> Confirm</button>
+                    </div></div></tr>);
                 }
             }
         }
@@ -95,11 +100,11 @@ export default class DoneTasks extends Component {
         let doneTasks = [];
 
         for (let i = 0; i < this.state.taskList.length; i++) {
-            if (this.state.taskList[i].status === "done      ") {
-
+            let title = this.state.taskList[i].taskTitle;
+            if (this.state.taskList[i].status === "done") {
                 if (this.state.employeeList[3].employeeName === this.state.taskList[i].employeeName) {
-                    doneTasks.push(<tr><div className="EmployeeTask"> {this.state.taskList[i].taskTitle}<div><button id="DeleteButton" className="btn btn-secondary btn-sm" name={this.state.taskList[i].taskTitle} onClick={this.DeleteDataOnServer}>Confirm</button>
-                            </div></div></tr>);
+                    doneTasks.push(<tr><div className="EmployeeTask"> {this.state.taskList[i].taskTitle}<div><button id="DeleteButton" className="btn btn-secondary btn-sm" name={this.state.taskList[i].taskTitle} onClick={() => this.DeleteDataOnServer(title)}> Confirm</button>
+                    </div></div></tr>);
                 }
             }
         }
@@ -111,11 +116,11 @@ export default class DoneTasks extends Component {
         let doneTasks = [];
 
         for (let i = 0; i < this.state.taskList.length; i++) {
-            if (this.state.taskList[i].status === "done      ") {
-
+            let title = this.state.taskList[i].taskTitle;
+            if (this.state.taskList[i].status === "done") {
                 if (this.state.employeeList[4].employeeName === this.state.taskList[i].employeeName) {
-                    doneTasks.push(<tr><div className="EmployeeTask"> {this.state.taskList[i].taskTitle}<div><button id="DeleteButton" className="btn btn-secondary btn-sm" name={this.state.taskList[i].taskTitle} onClick={this.DeleteDataOnServer}>Confirm</button>
-                            </div></div></tr>);
+                    doneTasks.push(<tr><div className="EmployeeTask"> {this.state.taskList[i].taskTitle}<div><button id="DeleteButton" className="btn btn-secondary btn-sm" name={this.state.taskList[i].taskTitle} onClick={() => this.DeleteDataOnServer(title)}> Confirm</button>
+                    </div></div></tr>);
                 }
             }
         }
@@ -127,11 +132,11 @@ export default class DoneTasks extends Component {
         let doneTasks = [];
 
         for (let i = 0; i < this.state.taskList.length; i++) {
-            if (this.state.taskList[i].status === "done      ") {
-
+            let title = this.state.taskList[i].taskTitle;
+            if (this.state.taskList[i].status === "done") {
                 if (this.state.employeeList[5].employeeName === this.state.taskList[i].employeeName) {
-                    doneTasks.push(<tr><div className="EmployeeTask"> {this.state.taskList[i].taskTitle}<div><button id="DeleteButton" className="btn btn-secondary btn-sm" name={this.state.taskList[i].taskTitle} onClick={this.DeleteDataOnServer}>Confirm</button>
-                            </div></div></tr>);
+                    doneTasks.push(<tr><div className="EmployeeTask"> {this.state.taskList[i].taskTitle}<div><button id="DeleteButton" className="btn btn-secondary btn-sm" name={this.state.taskList[i].taskTitle} onClick={() => this.DeleteDataOnServer(title)}> Confirm</button>
+                    </div></div></tr>);
                 }
             }
         }
@@ -141,23 +146,15 @@ export default class DoneTasks extends Component {
 
   
 
-    DeleteDataOnServer = () => {
+    DeleteDataOnServer = (title) => {
 
-        const { doneTask } = this.state;
-        const { doneEmployee } = this.state;
-
-        fetch('https://localhost:44340/api/task', {
+        fetch('https://localhost:44340/api/task/'+title, {
             method: 'DELETE',
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({
-                taskTitle: doneTask,
-                employeeName: doneEmployee
-
-            })
-
+            
         }).then((response) => response.json())
             .then((responseJson) => {
 

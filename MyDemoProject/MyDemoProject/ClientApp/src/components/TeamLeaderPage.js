@@ -27,6 +27,7 @@ export class TeamLeaderPage extends Component {
             .then(response => response.json())
             .then((employee) => {
                 this.setState({
+                    ...this.state,
                     employeeList: employee
 
                 });
@@ -37,6 +38,7 @@ export class TeamLeaderPage extends Component {
             .then(response => response.json())
             .then((task) => {
                 this.setState({
+                    ...this.state,
                     taskList: task
                 });
                 console.log('task fetch');
@@ -62,7 +64,7 @@ export class TeamLeaderPage extends Component {
 
         for (let i = 0; i < this.state.taskList.length; i++)
         {
-            if (this.state.taskList[i].status !== "done      ") {
+            if (this.state.taskList[i].status !== "done") {
                 if (this.state.employeeList[0].employeeName === this.state.taskList[i].employeeName) {
                     tasks.push(<tr><div className="EmployeeTask"> {this.state.taskList[i].taskTitle}</div></tr>);
                 }
@@ -77,7 +79,7 @@ export class TeamLeaderPage extends Component {
 
         for (let i = 0; i < this.state.taskList.length; i++)
         {
-            if (this.state.taskList[i].status !== "done      ") {
+            if (this.state.taskList[i].status !== "done") {
                 if (this.state.employeeList[1].employeeName === this.state.taskList[i].employeeName) {
                     tasks.push(<tr><div className="EmployeeTask"> {this.state.taskList[i].taskTitle}</div></tr>);
                 }
@@ -92,7 +94,7 @@ export class TeamLeaderPage extends Component {
 
         for (let i = 0; i < this.state.taskList.length; i++)
         {
-            if (this.state.taskList[i].status !== "done      ") {
+            if (this.state.taskList[i].status !== "done") {
                 if (this.state.employeeList[2].employeeName === this.state.taskList[i].employeeName) {
                     tasks.push(<tr><div className="EmployeeTask"> {this.state.taskList[i].taskTitle}</div></tr>);
                 }
@@ -107,7 +109,7 @@ export class TeamLeaderPage extends Component {
 
         for (let i = 0; i < this.state.taskList.length; i++)
         {
-            if (this.state.taskList[i].status !== "done      ") {
+            if (this.state.taskList[i].status !== "done") {
 
                 if (this.state.employeeList[3].employeeName === this.state.taskList[i].employeeName) {
                     tasks.push(<tr><div className="EmployeeTask"> {this.state.taskList[i].taskTitle}</div></tr>);
@@ -123,7 +125,7 @@ export class TeamLeaderPage extends Component {
 
         for (let i = 0; i < this.state.taskList.length; i++)
         {
-            if (this.state.taskList[i].status !== "done      ") {
+            if (this.state.taskList[i].status !== "done") {
 
                 if (this.state.employeeList[4].employeeName === this.state.taskList[i].employeeName) {
                     tasks.push(<tr><div className="EmployeeTask"> {this.state.taskList[i].taskTitle}</div></tr>);
@@ -139,7 +141,7 @@ export class TeamLeaderPage extends Component {
 
         for (let i = 0; i < this.state.taskList.length; i++)
         {
-            if (this.state.taskList[i].status !== "done      ") {
+            if (this.state.taskList[i].status !== "done") {
 
                 if (this.state.employeeList[5].employeeName === this.state.taskList[i].employeeName) {
                     tasks.push(<tr><div className="EmployeeTask"> {this.state.taskList[i].taskTitle}</div></tr>);
