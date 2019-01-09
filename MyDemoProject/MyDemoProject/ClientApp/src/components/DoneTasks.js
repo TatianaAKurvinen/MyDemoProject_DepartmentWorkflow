@@ -45,7 +45,7 @@ export default class DoneTasks extends Component {
         return employees;
     }
 
-    renderTasks0() {
+    renderDoneTasks0() {
 
         let doneTasks = [];
 
@@ -60,7 +60,7 @@ export default class DoneTasks extends Component {
         return doneTasks;
     }
 
-    renderTasks1() {
+    renderDoneTasks1() {
 
         let doneTasks = [];
 
@@ -75,7 +75,7 @@ export default class DoneTasks extends Component {
         return doneTasks;
     }
 
-    renderTasks2() {
+    renderDoneTasks2() {
 
         let doneTasks = [];
 
@@ -90,7 +90,7 @@ export default class DoneTasks extends Component {
         return doneTasks;
     }
 
-    renderTasks3() {
+    renderDoneTasks3() {
 
         let doneTasks = [];
 
@@ -106,7 +106,7 @@ export default class DoneTasks extends Component {
         return doneTasks;
     }
 
-    renderTasks4() {
+    renderDoneTasks4() {
 
         let doneTasks = [];
 
@@ -122,7 +122,7 @@ export default class DoneTasks extends Component {
         return doneTasks;
     }
 
-    renderTasks5() {
+    renderDoneTasks5() {
 
         let doneTasks = [];
 
@@ -182,27 +182,27 @@ export default class DoneTasks extends Component {
                         </td>
 
                         <td>
-                            {this.renderTasks0()}
+                            {this.renderDoneTasks0()}
                         </td>
 
                         <td>
-                            {this.renderTasks1()}
+                            {this.renderDoneTasks1()}
                         </td>
 
                         <td>
-                            {this.renderTasks2()}
+                            {this.renderDoneTasks2()}
                         </td>
 
                         <td>
-                            {this.renderTasks3()}
+                            {this.renderDoneTasks3()}
                         </td>
 
                         <td>
-                            {this.renderTasks4()}
+                            {this.renderDoneTasks4()}
                         </td>
 
                         <td>
-                            {this.renderTasks5()}
+                            {this.renderDoneTasks5()}
                         </td>
 
                     </tbody>

@@ -11,7 +11,7 @@ export default class OpenTasks extends Component {
         }
     }
 
-    componentWillMount() {
+    componentDidMount() {
 
 
         fetch('https://localhost:44340/api/task')

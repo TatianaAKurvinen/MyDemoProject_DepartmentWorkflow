@@ -3,8 +3,8 @@ import './TeamLeaderPage.css';
 
 
 
-export default class LeaderEmployeesTasksCheck extends Component {
-    displayName = LeaderEmployeesTasksCheck;
+export class  extends Component {
+    displayName = TeamLeaderPage.name;
 
     constructor(props) {
         super(props);
